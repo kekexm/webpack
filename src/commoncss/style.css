@@ -1,0 +1,27 @@
+@font-face{
+	font-family: anyFont;
+	src: url('../fonts/JandaManateeBubble.eot'),
+	url('../fonts/JandaManateeBubble.ttf'),
+	url('../fonts/JandaManateeBubble.woff'),
+	url('../fonts/JandaManateeBubble.svg');
+}
+@import 'flex.css';
+div{
+	border: 1px solid yellow;
+	opacity: .7
+}
+ul{
+	list-style: none;
+	font-size: 30px;
+	font-family: anyFont;
+}
+a{
+	text-decoration: none;
+	font-family: anyFont;
+}
+.flex{
+	display: flex;
+}
+img{
+	max-width: 400px;
+}

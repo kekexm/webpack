@@ -1,0 +1,9 @@
+@import 'style.css';
+/* 写在最上面 */
+.button {
+	background:tomato;
+	color:white;
+	padding: 6px;
+	border-radius: 6px;
+	height: 40px;
+}

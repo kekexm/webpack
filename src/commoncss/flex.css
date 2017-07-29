@@ -1,0 +1,9 @@
+
+/* 利用postcss-loader 实现下面的属性加上浏览器前缀 */
+.flex-box{
+	display: flex;
+}
+.trans{
+	transition: width 2s;
+
+}
