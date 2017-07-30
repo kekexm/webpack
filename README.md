@@ -25,6 +25,12 @@ entry: {
 
 		//jquery mustache angular都是npm install安装的  但是bootstrap 不行，全局引入失败
 
+		//vendor 属性可以将第三方库打包为一个整体放倒vendor.js里面。业务模块里面不需要再import 
+
+		//"jquery" 或者 "angular"  如果没有vendor 属性的话，那么每个模块需要手动 import 
+
+		//"jquery"等，并且会将模块统一打包到app.js 里面
+
 	},
 
 
