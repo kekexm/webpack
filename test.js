@@ -1,3 +1,6 @@
+
+//只是自己测试的页面，更项目无关  node test.js
+
 console.log(__dirname+'\\'+'src');
 console.log(__filename);
 

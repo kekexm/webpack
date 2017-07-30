@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<title>demo~！</title>
 </head>
-<body>
+<body ng-controller="ctrl">
 	<h3>0725</h3>
-	<img src="src/img/1.jpg" alt="">
-	<img src="src/img/4.jpg" alt="">
+	<img src="src/img/1.jpg" alt="我是图片1">
+	<img src="src/img/4.jpg" alt="我是图片4">
 	<a href="javascript:;">INDEX1123555555555344455555</a>   
+	<div class="container">
+	<div class="row">
+			<div class="col-sm-4">
+				今天天气不错！！！@@@@@@@@@
+			</div>
+			<div class="col-sm-3" style="background: pink">
+				哪有？
+			</div>
+		</div>
+	</div>
+	<h1>{{name}}</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<!-- Small modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+				  <div class="modal-dialog modal-sm" role="document">
+				    <div class="modal-content">
+				      ...
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- 本页面没有引入进去，修改不会自动刷新 -->
 	<!-- 页面有a标签的时候才会加载 组件另外的*.bundle.js  模块加载 -->
 	

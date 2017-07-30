@@ -27,7 +27,7 @@ module.exports = {
     },
 	plugins: [
 		//new ExtractTextPlugin("styles.css"),  分离css 暂时不用
-		// new ClearnPlugin(['./dist']),
+		new ClearnPlugin(['./dist']),
 		new webpack.BannerPlugin('This file is created by kekexm'), //输出的头部文件添加注释信息
 		new webpack.optimize.CommonsChunkPlugin({
 			names: ['vendor', 'runtime']//修改会自动刷新
@@ -54,13 +54,13 @@ module.exports = {
 		})
 
 	],
-	devServer: {
-		port: 8090,
-		// contentBase: "./dists",//本地服务器所加载的页面所在的目录
-		colors: true, //终端中输出结果为彩色
-		historyApiFallback: true, //不跳转
-		// inline: true//实时刷新
-	},
+	// devServer: {
+	// 	port: 8090,
+	// 	// contentBase: "./dists",//本地服务器所加载的页面所在的目录
+	// 	colors: true, //终端中输出结果为彩色
+	// 	historyApiFallback: true, //不跳转
+	// 	// inline: true//实时刷新
+	// },
 	module: {
 		loaders: [{
 				test: /\.js$/,

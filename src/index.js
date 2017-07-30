@@ -19,7 +19,10 @@ console.log(122223)
 // }
 // 
 // 
+import './static/bootstrap/css/bootstrap.min.css';
 import './commoncss/style.css';//引入总的样式
+import './plugin/jqplugin/css/grumble.min.css';//jquery插件 静态
+import './plugin/jqplugin/js/jquery.grumble.min.js';
 // console.log(AppStore);
 
 const _Button = require('./Components/button/button');
@@ -31,7 +34,29 @@ console.log(Button)
 console.log('AppStore',__Button)
 const button = new Button('NBA.CN');
 button.render('a');
+
+
 console.log('GLOBLE',jQuery);
 console.log('GLOBLE',$('body').html());
 const Header = require('./Components/header/header.js').default;
 new Header().render('h3');
+
+
+
+$("img").click(function(){
+	alert($(this).attr('alt'));
+}).css('width','250px');//全局jquery 无需引入了。
+
+
+angular.module('myApp',[])
+.controller('ctrl',['$scope',function($scope){
+	$scope.name = '小明同学!';
+}])
+
+
+$('h1').grumble({
+  text: 'jQuery 插件提示框', 
+  angle: 85, 
+  distance: 100, 
+  showAfter: 500 
+});  
