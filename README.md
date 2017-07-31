@@ -6,7 +6,7 @@ http://www.css88.com/doc/webpack2/plugins/extract-text-webpack-plugin/  中文�
 https://github.com/lcxfs1991/blog/issues/2  优化
 
 
-###############################操作说明######################################
+###############################操作说明####################################
 
 npm install
 
@@ -15,7 +15,30 @@ npm install
 线上发布：npm run build  生成dist打包好的文件
 
 
-##########################第一部分：入口文件以及第三方公共库################################
+##########################第一部分：入口文件以及第三方公共库########################
+
+entry: {
+		app: path.resolve(__dirname, './src/index.js'),//入口文件自己手写的  生成app.js
+
+		vendor: ['jquery', 'mustache','bts','angular']
+
+		bts 是本地静态bootstrap简写，如下的resolve属性的alias属性。
+
+	},
+
+resolve: {
+
+    extensions: ['', '.js', '.json', '.scss'],
+
+    alias: {
+        AppStore :  __dirname + '/src',//  路径简写  index.js页面27行
+
+        bts: __dirname + "/src/static/bootstrap/js/bootstrap.min.js"//引入本地静态bootstrap
+        
+    }
+},
+
+##############还可以有如下的引入bootstrap方法##########
 
 entry: {
 
@@ -23,13 +46,19 @@ entry: {
 
 		vendor: ['jquery', 'mustache','bootstrap-loader','angular'] //提取第三方公共库 全局引入
 
-		//jquery mustache angular都是npm install安装的  但是bootstrap 不行，全局引入失败
+		jquery mustache angular都是npm install安装的  但是bootstrap 不行，全局引入失败
 
-		//vendor 属性可以将第三方库打包为一个整体放倒vendor.js里面。业务模块里面不需要再import 
+		必须引入bootstrap-loader 并且安装依赖如下：
 
-		//"jquery" 或者 "angular"  如果没有vendor 属性的话，那么每个模块需要手动 import 
+		npm install css-loader node-sass resolve-url-loader sass-loader style-loader url-loader
 
-		//"jquery"等，并且会将模块统一打包到app.js 里面
+		--save  这样就没有必要静态引入bootstrap相关文件了
+
+		vendor 属性可以将第三方库打包为一个整体放倒vendor.js里面。业务模块里面不需要再import 
+
+		"jquery" 或者 "angular"  如果没有vendor 属性的话，那么每个模块需要手动 import 
+
+		"jquery"等，并且会将模块统一打包到app.js 里面
 
 	},
 
